@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "Harry",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrtP2JHvARlNeY36MjX7xMHCITGtZlDxHengoyj6V2jaYwa3zSeA"
+  },
+  {
+    "id": 2,
+    "name": "Ron",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Hermione",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "Dumbledore",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "Malfoy",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "name": "Dobby",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "name": "Snape",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "name": "Neville",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "name": "Voldemort",
+    "image": ""
+  }
+ 
+]

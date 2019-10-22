@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
-import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
+import Wrapper from "./components/Wrapper.js";
+import Title from "./components/Title.js";
 // import friends from "./friends.json";
 import people from "./people.json";
 
@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Clicky Game</Title>
+        <Title>Obliviate! Clicky Game</Title>
         {this.state.people.map(friend => (
           <Card
             id={friend.id}

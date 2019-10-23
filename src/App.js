@@ -5,21 +5,21 @@ import Title from "./components/Title.js";
 // import friends from "./friends.json";
 import people from "./people.json";
 
-const shuffleImages = (array) => {
-  let counter = array.length;
-  // While there are elements in the array
-  while (counter > 0) {
-      // Pick a random index
-      let index = Math.floor(Math.random() * counter);
-      // Decrease counter by 1
-      counter--;
-      // And swap the last element with it
-      let temp = array[counter];
-      array[counter] = array[index];
-      array[index] = temp;
-  }
-  return array;
-};
+// const shuffleImages = (array) => {
+//   let counter = array.length;
+//   // While there are elements in the array
+//   while (counter > 0) {
+//       // Pick a random index
+//       let index = Math.floor(Math.random() * counter);
+//       // Decrease counter by 1
+//       counter--;
+//       // And swap the last element with it
+//       let temp = array[counter];
+//       array[counter] = array[index];
+//       array[index] = temp;
+//   }
+//   return array;
+// };
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
@@ -28,14 +28,22 @@ class App extends Component {
     clicked: []
   };
 
+  removeFriend = image => {
+    // Filter this.state.friends for friends with an id not equal to the id being removed
+    const people = this.state.people.filter(people => people.image !== image);
+    // Set this.state.friends equal to the new friends array
+    this.setState({ people });
+  };
+
   componentDidMount() {
     this.setState({result: "Click a player to get started"})
   }
 
-  resetIconArray = () => {
-    let newScramble = shuffleImages(people);
-    this.setState({people: newScramble})
-  }
+  // resetIconArray = () => {
+    
+  //   let newScramble = shuffleImages(people);
+  //   this.setState({people: newScramble})
+  // }
 
   // removeFriend = id => {
   //   // Filter this.state.friends for friends with an id not equal to the id being removed
@@ -54,14 +62,12 @@ class App extends Component {
             // id={friend.id}
             // name={friend.name}
             image={friend.image}
+            removeFriend={this.removeFriend}
           />
         ))}
       </Wrapper>
     );
   }
-
- 
-
 
 }
 

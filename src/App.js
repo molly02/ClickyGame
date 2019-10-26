@@ -84,10 +84,13 @@ class App extends Component {
 
   random = image => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
-    const people = this.state.people.sort((a, b) => -0.5 -Math.random());
+    const people = this.state.people.sort((a, b) => 0.5 -Math.random());
     // Set this.state.friends equal to the new friends array
     this.setState({ people });
   };
+
+  // rearrange (friends){
+  //   return friends.sort(function (a, b) { return (0.5 - Math.random()) })
 
   componentDidMount() {
     this.setState({result: "Click a player to get started"})
@@ -99,12 +102,6 @@ class App extends Component {
   //   this.setState({people: newScramble})
   // }
 
-  // random = id => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const friends = this.state.friends.filter(friend => friend.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ friends });
-  // };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {

@@ -5,12 +5,12 @@ function Card(props) {
   return (
     <div className="card">
       {/* <div className="img-container"> */}
-        <img src={props.image} 
+        <img onClick={() => props.random(props.image)}  src={props.image} 
         // onClick={props.image}
          />  
-        <span onClick={() => props.removeFriend(props.image)} className="remove">
+        {/* <span onClick={() => props.removeFriend(props.image)} className="remove">
         𝘅
-      </span>
+      </span> */}
       {/* </div> */}
     </div>
   );

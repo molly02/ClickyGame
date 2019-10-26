@@ -21,6 +21,60 @@ import people from "./people.json";
 //   return array;
 // };
 
+//
+// handlePicked = event => {
+
+//   const name = event.target.attributes.getNamedItem("name").value;
+//   this.shuffleCharacters()
+//   this.checkGuess(name, this.updateTopScore)
+// }
+
+// shuffleCharacters = () => {
+//   this.setState(this.state.characters = this.shuffleArray(this.state.characters))
+// }
+
+// shuffleArray = (a) => {
+//   var j, x, i;
+//   for (i = a.length - 1; i > 0; i--) {
+//     j = Math.floor(Math.random() * (i + 1));
+//     x = a[i];
+//     a[i] = a[j];
+//     a[j] = x;
+//   }
+//   return a;
+// }
+
+// checkGuess = (name, cb) => {
+//   const newState = { ...this.state };
+//   if (newState.pickedChars.includes(name)) {
+//     newState.alertMessage = `YOU ALREADY PICKED "${name.toUpperCase()}"!`
+//     newState.pickedChars = []
+//     this.setState(this.state = newState)
+//   } else {
+//     newState.pickedChars.push(name)
+//     newState.alertMessage = `GOOD CHOICE!`
+//     this.setState(this.state = newState)
+//   }
+//   cb(newState, this.alertWinner)
+// }
+
+// updateTopScore = (newState, cb) => {
+//   if (newState.pickedChars.length > newState.topScore) {
+//     newState.topScore++
+//     this.setState(this.state = newState)
+//   }
+//   cb(newState)
+// }
+
+// alertWinner = (newState) => {
+//   if (newState.pickedChars.length === 12) {
+//     newState.alertMessage = "CHAMPION!";
+//     newState.pickedChars = [];
+//     this.setState(this.state = newState)
+//   }
+// }
+//
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
@@ -28,9 +82,9 @@ class App extends Component {
     clicked: []
   };
 
-  removeFriend = image => {
+  random = image => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
-    const people = this.state.people.filter(people => people.image !== image);
+    const people = this.state.people.sort((a, b) => -0.5 -Math.random());
     // Set this.state.friends equal to the new friends array
     this.setState({ people });
   };
@@ -38,14 +92,14 @@ class App extends Component {
   componentDidMount() {
     this.setState({result: "Click a player to get started"})
   }
-
+  
   // resetIconArray = () => {
     
   //   let newScramble = shuffleImages(people);
   //   this.setState({people: newScramble})
   // }
 
-  // removeFriend = id => {
+  // random = id => {
   //   // Filter this.state.friends for friends with an id not equal to the id being removed
   //   const friends = this.state.friends.filter(friend => friend.id !== id);
   //   // Set this.state.friends equal to the new friends array
@@ -62,7 +116,7 @@ class App extends Component {
             // id={friend.id}
             // name={friend.name}
             image={friend.image}
-            removeFriend={this.removeFriend}
+            random ={this.random}
           />
         ))}
       </Wrapper>

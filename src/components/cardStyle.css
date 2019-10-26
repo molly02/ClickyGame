@@ -29,7 +29,7 @@
   color: maroon;
   margin-bottom: 50px;
 }
-
+/* apply to only images not everything */
 .wrapper {
   padding-top: 50px;
   background: #ECEFF1;
@@ -40,21 +40,9 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
+  /* width: 761px;
+  margin: auto; */
 }
-
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
-}
-
-.card > .remove:hover {
-  color: #d50000;
-}
-
 
 /* .card > .content {
   padding-left: 1rem;
